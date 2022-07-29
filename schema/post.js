@@ -1,18 +1,20 @@
 const {model,Schema,Types} = require('mongoose')
 
 const schema = new Schema({
-    user: {type: Schema.Types.ObjectId, ref: 'User'},
+    user: {
+        type: String,
+        required: true
+    },
     published: {
         type: Date,
         default: Date.now()
     },
-    title: {
+    header: {
         type: String,
         required: true
     },
-    text: {
-        type: String,
-        required: true
+    blocks: {
+        type: Array
     },
     comments: [
         {
@@ -24,6 +26,12 @@ const schema = new Schema({
                     user: {type: String}
                 }
             ]
+        }
+    ],
+    reviews: [
+        {
+            user: {type: String},
+            review: {type: Number}
         }
     ]
 })
