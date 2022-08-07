@@ -5,6 +5,10 @@ const schema = new Schema({
         type: String,
         required: true
     },
+    postid:{
+        type: String,
+        required: true
+    },
     published: {
         type: Date,
         default: Date.now()
